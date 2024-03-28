@@ -2,10 +2,10 @@ namespace SuperHero.Services.SuperHeroService
 {
     public interface ISuperHeroService
     {
-        List<SuperHeros> GetSuperHeroes();
-        SuperHeros GetHeros();
-        List<SuperHeros> AddSuperHeros(SuperHeros heros);
-        List<SuperHeros> UpdateSuperHeros(int id, SuperHeros request);
-        List<SuperHeros> DeleteSuperHeros(string id);
+        IList<SuperHeros> GetSuperHeroes();
+        SuperHeros GetHeros(int id);
+        IList<SuperHeros> AddSuperHeros(SuperHeros heros);
+        IList<SuperHeros> UpdateSuperHeros(int id, SuperHeros request);
+        IList<SuperHeros> DeleteSuperHeros(int id);
     }
 }

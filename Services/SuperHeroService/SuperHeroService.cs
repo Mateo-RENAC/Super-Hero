@@ -25,19 +25,26 @@ namespace SuperHero.Services.SuperHeroService
 
         public SuperHeros GetHeros(int id)
         {
-            return superhero[id];
+            return (SuperHeros)superhero.Where(hero => hero.Id == id);
         }
 
         public IList<SuperHeros> UpdateSuperHeros(int id, SuperHeros request)
         {
-            superhero[id] = request;
-            //Je sais pas trop où en venir avec ça
+            SuperHeros hero = GetHeros(id);
+            if (hero != null) 
+            {
+                Console.WriteLine("No Hero find at this Id : " + id);
+                return superhero;
+            }
+            hero.Name = request.Name;
+            hero.Power = request.Power;
+            return superhero;
         }
 
         public IList<SuperHeros> DeleteSuperHeros(int id)
         {
-
-            superhero.Remove(superhero[id]);
+            superhero.Remove((SuperHeros)superhero.Where(hero => hero.Id == id));
+            return superhero;
         }
 
     }

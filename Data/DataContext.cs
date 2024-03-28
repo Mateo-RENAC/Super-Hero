@@ -18,17 +18,4 @@ namespace SuperHero.Data
         
         public DbSet<SuperHeros> SuperHero { get; set; }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
